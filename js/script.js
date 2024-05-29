@@ -70,30 +70,38 @@ createApp({
   },
 
   methods:{
-    caroselloAvanti : function  caroselloAvanti(){
-     this.indice++;
 
-     if (this.indice >= this.slides.length) {
+
+    caroselloAvanti : function  caroselloAvanti(){
+    
+
+        if (this.indice >= this.slides.length - 1) {
 
         this.indice=0;
 
         
-     }
+        }else{
+
+        this.indice++;
+
+        }
        
 
     },
 
+
     caroselloIndietro: function caroselloIndietro (){
-
-     this.indice--;
-       
-     if (this.indice < 0 ) {
-
-
-        this.indice=this.slides.length -1;
-
         
-     }
+        if (this.indice === 0 ) {
+
+
+        this.indice=this.slides.length - 1;
+
+        }else{
+
+            this.indice--;
+
+        }
      }
   }
 }).mount('#app')
