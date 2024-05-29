@@ -26,9 +26,12 @@
 
 const { createApp } = Vue
 
+
 createApp({
   data() {
     return {
+
+        indice:0,
          
         
         slides :  [{    image: 'img/01.webp',
@@ -64,5 +67,33 @@ createApp({
    
       
     }
+  },
+
+  methods:{
+    caroselloAvanti : function  caroselloAvanti(){
+     this.indice++;
+
+     if (this.indice >= this.slides.length) {
+
+        this.indice=0;
+
+        
+     }
+       
+
+    },
+
+    caroselloIndietro: function caroselloIndietro (){
+
+     this.indice--;
+       
+     if (this.indice < 0 ) {
+
+
+        this.indice=this.slides.length -1;
+
+        
+     }
+     }
   }
 }).mount('#app')
